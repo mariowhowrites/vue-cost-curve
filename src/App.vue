@@ -1,29 +1,31 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div id="app" class="bg-grey-light h-screen">
+    <h1 class="text-center">Price Curves</h1>
+    <section class="w-4/5 h-half mx-auto flex mt-16">
+      <div class="w-1/2">
+        <price-chart height="300px"></price-chart>
+      </div>
+      <div class="cost-factors w-1/2">
+        <cost-factors></cost-factors>
+      </div>
+    </section>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import PriceChart from "./components/PriceChart.vue"
+import CostFactors from "./components/CostFactors.vue"
+import "./main.css"
+
+export default {
+  components: {
+    PriceChart,
+    CostFactors
   }
 }
-</style>
+
+// x, y into formula. [[100, 20], [200, 40]] ⇒ x2 + 2x + 5
+
+
+</script>
+
